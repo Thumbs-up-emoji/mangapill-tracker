@@ -15,3 +15,19 @@ def parse_url(url, filename):
 # usage
 # url = "https://mangapill.com/chapters/1063-20202500/dragon-ball-chapter-202.5"
 # parse_url(url, 'db.csv')
+
+def update(url,filename):
+    parsed_url = urlparse(url)
+    path_parts = parsed_url.path.split('/')     #splits by /, for basic parts of url
+    number_parts = path_parts[2].split('-')     #splits by -, for chapter number and manga no.
+
+    with open(filename, 'r', newline='') as file:
+        reader = csv.reader(file)
+        data = list(reader)
+    
+    for row in data:
+        if row[0] == number_parts[0]:
+            row[1]=number_parts[1][:1]
+            row[2]=number_parts[1][1:-3]
+            row[3]=number_parts[1][-3]
+            break
