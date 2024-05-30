@@ -11,15 +11,18 @@ def is_404(url):
         return False
 
 # usage
-url = "https://mangapill.com/manga/8"
-if is_404(url):
-    print(f"{url} is a 404")
-else:
-    print(f"{url} is not a 404")
+# url = "https://mangapill.com/chapters/1063-20202500/dragon-ball-chapter-202.5"
+# if is_404(url):
+#     print(f"{url} is a 404")
+# else:
+#     print(f"{url} is not a 404")
 
 def check_chapter(row_data):
-    url="https://mangapill.com/chapters/"+str(row_data[0])+"-"+str(row_data[1])+str(row_data[2])+str(row_data[2])+"00"
-    if is_404(url):
-        print("Chapter not found")
-    else:
+    url="https://mangapill.com/chapters/"+str(row_data[0])+"-"+str(row_data[1])+str(row_data[2])+str(row_data[3])+"00"  #
+    if not is_404(url):
         print(url)
+        return True
+    else:
+        return False
+
+    

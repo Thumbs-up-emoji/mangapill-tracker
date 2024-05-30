@@ -13,5 +13,5 @@ def parse_url(url, filename):
         writer.writerow(list(parsed_parts))
 
 # usage
-url = 'https://mangapill.com/chapters/8-10795000/kingdom-chapter-795'
-parse_url(url, 'db.csv')
+# url = "https://mangapill.com/chapters/1063-20202500/dragon-ball-chapter-202.5"
+# parse_url(url, 'db.csv')

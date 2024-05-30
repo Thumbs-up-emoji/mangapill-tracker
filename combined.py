@@ -2,6 +2,7 @@
 import sys
 from urllib.parse import urlparse
 from url import parse_url
+from next import next_check
 
 if len(sys.argv) > 1:
     arg = sys.argv[1]
@@ -17,4 +18,5 @@ if len(sys.argv) > 1:
         print("Error: Enter valid URL or manga no.")
 else:
     # Code to handle when no argument is provided
+    next_check('db.csv')
     pass
