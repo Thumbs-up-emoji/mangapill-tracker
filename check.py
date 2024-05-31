@@ -24,7 +24,7 @@ def check_chapter(row_data):
         return True
     else:
         return False
-
-row_data=['1063', '2', '0203', '0']
-check_chapter(row_data)
+    
+# row_data=['1', '1', '0002', '0']
+# check_chapter(row_data)
     

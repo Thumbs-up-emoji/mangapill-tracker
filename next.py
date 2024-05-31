@@ -16,7 +16,7 @@ def next_check(db):
         dno=data[i][3] 
         if(data[i][3]=='5'):
             data[i][3]='0'
-            data[i][2]='0'+str(int(data[i][2])+1)
+            data[i][2]=str(int(data[i][2])+1).zfill(4)
             if(check_chapter(data[i])):
                 continue
             data[i][1]=gno
@@ -27,16 +27,16 @@ def next_check(db):
             if(check_chapter(data[i])):
                 continue
             data[i][3]='0'
-            data[i][2]='0'+str(int(data[i][2])+1)
+            data[i][2]=str(int(data[i][2])+1).zfill(4)
             if(check_chapter(data[i])):
                 continue
             data[i][2]='0001'
             data[i][1]=str(int(data[i][1])+1)
             if(check_chapter(data[i])):
                 continue
-        data[i][1]=gno
-        data[i][2]=cno
-        data[i][3]=dno
-    with open(db, 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(data)
+        #data[i][1]=gno
+        #data[i][2]=cno
+        #data[i][3]=dno
+    #with open(db, 'w', newline='') as file:
+        #writer = csv.writer(file)
+        #writer.writerows(data)
