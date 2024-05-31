@@ -25,4 +25,6 @@ def check_chapter(row_data):
     else:
         return False
 
+row_data=['1063', '2', '0203', '0']
+check_chapter(row_data)
     
