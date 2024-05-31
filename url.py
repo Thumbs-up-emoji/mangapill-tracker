@@ -1,4 +1,3 @@
-#implement checking if same manga already added before
 import csv
 from urllib.parse import urlparse
 
@@ -25,9 +24,19 @@ def update(url,filename):
         reader = csv.reader(file)
         data = list(reader)
     
+    found=False
+
     for row in data:
         if row[0] == number_parts[0]:
             row[1]=number_parts[1][:1]
             row[2]=number_parts[1][1:-3]
             row[3]=number_parts[1][-3]
+            found=True
             break
+
+    if not found:
+        parse_url(url, filename)
+    else:
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerows(data)

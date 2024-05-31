@@ -4,7 +4,7 @@ import requests
 def is_404(url):
     try:
         response = requests.get(url)
-        print(response.status_code)
+        #print(response.status_code)
         return response.status_code == 404
     except requests.ConnectionError:
         print("failed to connect to url")
