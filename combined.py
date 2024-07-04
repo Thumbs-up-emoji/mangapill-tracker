@@ -1,7 +1,7 @@
 #if url- store, if number- update using new url, if blank- check all from db
 import sys
 from urllib.parse import urlparse
-from url import parse_url,update
+from url import update
 from next import next_check
 
 if len(sys.argv) > 1:
