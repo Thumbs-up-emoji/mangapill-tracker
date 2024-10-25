@@ -3,16 +3,19 @@ import sys
 from urllib.parse import urlparse
 from url import update
 from next import next_check
+from print import print_all
 
 if len(sys.argv) > 1:
     arg = sys.argv[1]
     if urlparse(arg).scheme:
         # Code to handle when the argument is a URL
-        update(arg, 'db.csv')
+        update(arg, '/home/vk/CS/mangapill-tracker/db.csv')
+    elif arg=='p':    
+        print_all('/home/vk/CS/mangapill-tracker/db.csv')
     else:
         # Code to handle when the argument is neither a number nor a URL
         print("Error: Enter valid URL or manga no.")
 else:
     # Code to handle when no argument is provided
-    next_check('db.csv')
+    next_check('/home/vk/CS/mangapill-tracker/db.csv')
     pass
