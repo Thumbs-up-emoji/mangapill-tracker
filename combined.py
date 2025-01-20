@@ -9,13 +9,13 @@ if len(sys.argv) > 1:
     arg = sys.argv[1]
     if urlparse(arg).scheme:
         # Code to handle when the argument is a URL
-        update(arg, 'C:\\Users\\ASUS\\OneDrive - BITS Pilani K K Birla Goa Campus\\Desktop\\Stuff\\mangapill-tracker\\db.csv')
+        update(arg, '/home/vk/CS/mangapill-tracker/db.csv')
     elif arg=='p':    
-        print_all('C:\\Users\\ASUS\\OneDrive - BITS Pilani K K Birla Goa Campus\\Desktop\\Stuff\\mangapill-tracker\\db.csv')
+        print_all('/home/vk/CS/mangapill-tracker/db.csv')
     else:
         # Code to handle when the argument is neither a number nor a URL
         print("Error: Enter valid URL or manga no.")
 else:
     # Code to handle when no argument is provided
-    next_check('C:\\Users\\ASUS\\OneDrive - BITS Pilani K K Birla Goa Campus\\Desktop\\Stuff\\mangapill-tracker\\db.csv')
+    next_check('/home/vk/CS/mangapill-tracker/db.csv')
     pass
